@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "test": "mocha --opts tests/mocha.opts tests/**/*-test.ts",
-    "build": "rm -rf lib && tsc -p . && rm -fr lib/tests && mv lib/src/** lib/ && rm -fr lib/src",
+    "build:ts": "rm -rf lib-ts && tsc -p . && rm -fr lib-ts/tests && mv lib-ts/src/** lib-ts/ && rm -fr lib-ts/src",
+    "build:babel": "rm -rf lib && babel lib-ts -d lib --sourceMaps 'both'",
+    "build": "npm run build:ts && npm run build:babel",
     "prepublish": "npm run build"
   },
   "main": "lib/index.js",
@@ -19,5 +21,10 @@
     "mocha-clean": "^1.0.0",
     "ts-node": "^1.3.0",
     "typescript": "^2.0.3"
+  },
+  "dependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-remove-comments": "^2.0.0",
+    "babel-preset-latest": "^6.16.0"
   }
 }

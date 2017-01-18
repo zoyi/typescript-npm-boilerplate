@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "lib/",
+    "outDir": "lib-ts/",
     "sourceMap": true,
     "module": "commonjs",
     "moduleResolution": "node",
