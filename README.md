@@ -23,14 +23,6 @@ npm test
 
 ## Building
 
-Use TypeScript straight up
-
-```
-rm -rf lib && tsc -p .
-```
-
-or a convenience shortcut
-
 ```
 npm run build
 ```
